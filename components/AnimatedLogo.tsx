@@ -4,14 +4,13 @@ import { motion, useReducedMotion } from 'motion/react';
 import { LOGO_PATHS, LOGO_VIEWBOX } from '@/lib/logo-paths';
 import { StaticLogo } from '@/components/logo/StaticLogo';
 
-export function V2AnimatedLogo({ className }: { className?: string }) {
+export function AnimatedLogo({ className }: { className?: string }) {
   const prefersReducedMotion = useReducedMotion();
 
   if (prefersReducedMotion) {
     return <StaticLogo className={className} />;
   }
 
-  // Simple, confident fade - no rotation or gimmicks
   return (
     <motion.svg
       viewBox={LOGO_VIEWBOX}
@@ -20,7 +19,7 @@ export function V2AnimatedLogo({ className }: { className?: string }) {
       animate={{ opacity: 1, scale: 1 }}
       transition={{
         opacity: { duration: 1.8, ease: [0.25, 0.1, 0.25, 1] },
-        scale: { duration: 2.4, ease: [0.25, 0.1, 0.25, 1] }
+        scale: { duration: 2.4, ease: [0.25, 0.1, 0.25, 1] },
       }}
     >
       <motion.path
