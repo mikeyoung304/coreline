@@ -1,0 +1,16 @@
+// Extracted from Coreline_Icon_Black.svg (920.4 x 920.4 viewBox)
+export const LOGO_PATHS = {
+  // Slate blue L-shape (large)
+  slateShape: 'M737.69,633.89c0,57.33-46.47,103.8-103.8,103.8h-347.39c-57.33,0-103.8-46.47-103.8-103.8V0h-15.59C74.82,0,0,74.82,0,167.12v586.16c0,92.3,74.82,167.12,167.12,167.12h586.16c92.3,0,167.12-74.82,167.12-167.12v-201.73h-182.71v82.34Z',
+  // Blue accent (smaller top-right piece)
+  blueAccent: 'M633.89,182.71c57.33,0,103.8,46.47,103.8,103.8v82.34h182.71v-201.73C920.4,74.82,845.58,0,753.28,0h-387.87v182.71h268.48Z',
+} as const;
+
+// Approximate path lengths for stroke-dasharray animation
+// These values enable the "drawing" effect where the stroke appears to be drawn on screen
+export const LOGO_PATH_LENGTHS = {
+  slateShape: 3200,
+  blueAccent: 1800,
+} as const;
+
+export const LOGO_VIEWBOX = '0 0 920.4 920.4';
