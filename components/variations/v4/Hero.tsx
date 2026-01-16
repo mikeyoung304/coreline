@@ -46,12 +46,12 @@ export function V4Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-dvh">
+    <section className="relative h-full overflow-hidden">
       {/* Phase 1: Full-screen logo animation */}
       <AnimatePresence>
         {!animationComplete && (
           <motion.div
-            className="fixed inset-0 z-50 bg-navy-950 flex items-center justify-center"
+            className="absolute inset-0 z-50 bg-navy-950 flex items-center justify-center"
             exit={{ opacity: 0, filter: 'blur(4px)' }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
           >
@@ -78,7 +78,7 @@ export function V4Hero() {
       </AnimatePresence>
 
       {/* Phase 2: Revealed hero content */}
-      <div className="min-h-dvh bg-cream-50 flex flex-col">
+      <div className="h-full bg-cream-50 flex flex-col">
         {/* Mini logo in corner (after animation) - same position as animation target */}
         {animationComplete && (
           <motion.div

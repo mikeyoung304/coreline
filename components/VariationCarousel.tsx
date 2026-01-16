@@ -100,7 +100,7 @@ export function VariationCarousel() {
               className="w-full h-full flex-shrink-0 snap-center snap-always"
             >
               {shouldRender ? (
-                <Component />
+                <Component key={index === currentIndex ? `${variation.id}-active` : variation.id} />
               ) : (
                 <div className="w-full h-full bg-navy-950" />
               )}
