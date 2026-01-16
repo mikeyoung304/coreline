@@ -6,7 +6,7 @@ import { StaticLogo } from '@/components/logo/StaticLogo';
 import { EASINGS, DURATIONS } from '@/lib/animation-constants';
 
 // V6-specific lighter logo colors for dark background contrast
-const V6_V6_LOGO_COLORS = {
+const V6_LOGO_COLORS = {
   slate: '#6b7f94',  // Lightened from #3d4f5f
   blue: '#7da3d4',   // Lightened from #5c7cad
 } as const;
