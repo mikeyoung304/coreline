@@ -6,26 +6,26 @@ import { V2Hero } from './variations/v2';
 import { V3Hero } from './variations/v3';
 import { V4Hero } from './variations/v4';
 import { V5Hero } from './variations/v5';
-import { V5AnimatedLogo } from './variations/v5/AnimatedLogo';
+import { V4AnimatedLogo } from './variations/v4/AnimatedLogo';
 
 // Featured variation
 const FEATURED = {
-  id: 'v5',
-  label: 'Editorial',
+  id: 'v4',
+  label: 'Geometric',
   optionLabel: 'Recommended',
   description:
-    'A sophisticated editorial approach featuring refined typography, subtle motion, and elegant spacing. This design emphasizes professionalism and trustworthiness through restraint and precision.',
-  component: V5Hero,
+    'Structured geometry conveying stability and precision through clean lines and purposeful animation. This design emphasizes clarity and confidence.',
+  component: V4Hero,
 };
 
 // Alternative variations
 const ALTERNATIVES = [
   {
-    id: 'v4',
-    label: 'Geometric',
+    id: 'v5',
+    label: 'Editorial',
     optionLabel: 'Option B',
-    description: 'Structured geometry conveying stability and precision',
-    component: V4Hero,
+    description: 'Sophisticated editorial approach with refined typography',
+    component: V5Hero,
   },
   {
     id: 'v2',
@@ -95,7 +95,7 @@ export function Dashboard() {
               transition={{ duration: 0.5 }}
               className="text-center flex flex-col items-center"
             >
-              <V5AnimatedLogo className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-4 md:mb-6" />
+              <V4AnimatedLogo className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-4 md:mb-6" />
               <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/40 mb-1 md:mb-2">
                 Design Presentation
               </p>

@@ -7,11 +7,6 @@ import { ButtonLink } from '@/components/ui/Button';
 import { CONTACT_EMAIL } from '@/lib/constants';
 import { StaticLogo } from '@/components/logo/StaticLogo';
 
-// Logo final position and size (must match the static logo placement)
-const LOGO_FINAL_SIZE = 40; // w-10 = 40px
-const LOGO_FINAL_TOP = 32; // top-8 = 32px
-const LOGO_FINAL_LEFT = 32; // left-8 = 32px
-
 export function V4Hero() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [targetPosition, setTargetPosition] = useState<{ x: number; y: number; scale: number } | null>(null);
@@ -21,12 +16,34 @@ export function V4Hero() {
     const calculateTarget = () => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      const logoSize = vw >= 768 ? 384 : 256; // md:w-96 or w-64
+
+      // Determine responsive values based on viewport width
+      // Mobile (< 640px): top-4 left-4 w-8 h-8 (16px, 16px, 32px)
+      // SM (640-768px): top-6 left-6 w-10 h-10 (24px, 24px, 40px)
+      // MD+ (≥ 768px): top-8 left-8 w-10 h-10 (32px, 32px, 40px)
+      let finalSize, finalTop, finalLeft, startSize;
+
+      if (vw < 640) {
+        finalSize = 32; // w-8
+        finalTop = 16; // top-4
+        finalLeft = 16; // left-4
+        startSize = 256; // w-64
+      } else if (vw < 768) {
+        finalSize = 40; // w-10
+        finalTop = 24; // top-6
+        finalLeft = 24; // left-6
+        startSize = 256; // w-64
+      } else {
+        finalSize = 40; // w-10
+        finalTop = 32; // top-8
+        finalLeft = 32; // left-8
+        startSize = 384; // md:w-96
+      }
 
       // Logo starts centered, needs to move to top-left corner
-      // Final center position should be at (LOGO_FINAL_LEFT + LOGO_FINAL_SIZE/2, LOGO_FINAL_TOP + LOGO_FINAL_SIZE/2)
-      const finalCenterX = LOGO_FINAL_LEFT + LOGO_FINAL_SIZE / 2;
-      const finalCenterY = LOGO_FINAL_TOP + LOGO_FINAL_SIZE / 2;
+      // Final center position should be at (finalLeft + finalSize/2, finalTop + finalSize/2)
+      const finalCenterX = finalLeft + finalSize / 2;
+      const finalCenterY = finalTop + finalSize / 2;
 
       // Current center is at viewport center
       const currentCenterX = vw / 2;
@@ -35,7 +52,7 @@ export function V4Hero() {
       // Calculate offset needed
       const x = finalCenterX - currentCenterX;
       const y = finalCenterY - currentCenterY;
-      const scale = LOGO_FINAL_SIZE / logoSize;
+      const scale = finalSize / startSize;
 
       setTargetPosition({ x, y, scale });
     };
