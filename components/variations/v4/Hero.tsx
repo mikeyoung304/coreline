@@ -82,22 +82,22 @@ export function V4Hero() {
         {/* Mini logo in corner (after animation) - same position as animation target */}
         {animationComplete && (
           <motion.div
-            className="absolute top-8 left-8 z-10"
+            className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <StaticLogo className="w-10 h-10" />
+            <StaticLogo className="w-8 h-8 sm:w-10 sm:h-10" />
           </motion.div>
         )}
 
-        <div className="flex-1 flex items-center justify-center px-6">
-          <div className="text-center max-w-3xl">
+        <div className="flex-1 flex items-center justify-center px-4 sm:px-6 py-8">
+          <div className="text-center max-w-3xl w-full">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={animationComplete ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[2.75rem] md:text-[4rem] lg:text-[5rem] font-display font-normal text-navy-950 tracking-[-0.02em] leading-[1.05]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-display font-normal text-navy-950 tracking-[-0.02em] leading-[1.05]"
             >
               Coreline Partners
             </motion.h1>
@@ -106,7 +106,7 @@ export function V4Hero() {
               initial={{ opacity: 0 }}
               animate={animationComplete ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="mt-10 text-[13px] tracking-[0.15em] text-navy-800/50 uppercase font-medium"
+              className="mt-6 sm:mt-8 md:mt-10 text-[11px] sm:text-xs md:text-[13px] tracking-[0.12em] sm:tracking-[0.15em] text-navy-800/50 uppercase font-medium"
             >
               Private Wealth · Institutional Advisory
             </motion.p>
@@ -115,7 +115,7 @@ export function V4Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={animationComplete ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-16"
+              className="mt-10 sm:mt-12 md:mt-16"
             >
               <ButtonLink
                 href={`mailto:${CONTACT_EMAIL}?subject=Private%20Consultation%20Request`}

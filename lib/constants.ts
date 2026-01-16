@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = 'contact@corelinepartners.com';
+export const CONTACT_EMAIL = 'info@corelineim.com';
 
 export const COMPLIANCE = {
   firm: 'Investment advisory services offered through Coreline Partners.',

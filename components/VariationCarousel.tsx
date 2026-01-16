@@ -1,22 +1,16 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { V1Hero } from './variations/v1';
 import { V2Hero } from './variations/v2';
 import { V3Hero } from './variations/v3';
 import { V4Hero } from './variations/v4';
 import { V5Hero } from './variations/v5';
-import { V6Hero } from './variations/v6';
-import { V7Hero } from './variations/v7';
 
 const VARIATIONS = [
-  { id: 'v1', component: V1Hero },
   { id: 'v2', component: V2Hero },
   { id: 'v3', component: V3Hero },
   { id: 'v4', component: V4Hero },
   { id: 'v5', component: V5Hero },
-  { id: 'v6', component: V6Hero },
-  { id: 'v7', component: V7Hero },
 ];
 
 export function VariationCarousel() {
